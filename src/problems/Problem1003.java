@@ -24,6 +24,15 @@ public class Problem1003 {
         }
     }
     
+    public static int solutionTest(int M, int N, int x[]){
+         int vi [] = new int[N];
+         for (int i = 0; i < M*N; i++) {
+            vi[i%N]+=x[i];
+         }
+         return indexMax(vi);
+    }
+    
+    
     public static int indexMax(int[]vi){
         int index = 0;
         for (int i = 1; i < vi.length; i++) {
