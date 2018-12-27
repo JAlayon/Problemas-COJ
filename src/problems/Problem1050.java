@@ -1,3 +1,4 @@
+
 package problems;
 
 import java.io.BufferedReader;
@@ -5,31 +6,31 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.StreamTokenizer;
-import java.util.Scanner;
 
 /**
- * 1306 - Div 4
+ *
+ * @author alayon
  */
-public class Problem1306 {
-
+public class Problem1050 {
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PrintWriter pw = new PrintWriter(System.out, true);
         StreamTokenizer st = new StreamTokenizer(br);
         st.nextToken();
-        int T = (int)st.nval;
-        String number;
-        while (T-- > 0) {
-            number = br.readLine();
-            pw.println(multipleFour(number));
+        int n = (int)st.nval;
+        int coprimes = 1;
+        for (int i = 2; i < n; i++) {
+            if(coprimes(i,n)) coprimes++;
         }
+        pw.println(coprimes);
     }
-
-    public static String multipleFour(String number) {
-        if (number.length() > 2) {
-            number = number.substring(number.length() - 2);
+    
+    public static boolean coprimes(int a, int b){
+        for (int i = 2; i <= a; i++) {
+            if(a%i==0 && b%i==0)
+                return false;
         }
-        int num = Integer.parseInt(number);
-        return (num % 4 == 0)?"YES":"NO";
+        return true;
     }
 }

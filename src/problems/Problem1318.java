@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * 1318 - Abc
  */
-public class Program1318 {
+public class Problem1318 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
